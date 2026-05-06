@@ -153,19 +153,49 @@ $F(p)=c$ の近傍 $V\subset \mathbb{R}$ を取り，$U$ 上の局所座標
 \]
 と書ける。
 
-ここで $F=c+x^n$ であるから，
+ここで次の事実を用いる。
+任意の点 $q\in M$ と任意の接ベクトル $X_q\in T_qM$ に対して，
+ある $\varepsilon>0$ と滑らかな曲線
 \[
-  dF_p=dx^n_p
+  \gamma:(-\varepsilon,\varepsilon)\to M
 \]
-である。したがって
+が存在して，
+\[
+  \gamma(0)=q,
+  \qquad
+  \gamma'(0)=X_q
+\]
+を満たす。
+
+この事実を $q=p$，$X_q=v$ に対して用い，
+\[
+  \gamma(0)=p,
+  \qquad
+  \gamma'(0)=v
+\]
+を満たす曲線 $\gamma$ を取る。
+上の座標表示と $\gamma'(0)=v$ より，
+\[
+  \left.\frac{d}{ds}\right|_{s=0}x^n(\gamma(s))=a^n
+\]
+である。
+
+また $p\in N$ であるから $x^n(p)=0$ である。
+$\mathbb{R}$ の標準座標を $t$ と書くと，$F=c+x^n$ より，
+曲線 $F\circ\gamma$ の $t$ 座標は
+\[
+  t\bigl((F\circ\gamma)(s)\bigr)
+  =
+  c+x^n(\gamma(s))
+\]
+である。したがって，接写像を曲線の速度で計算すると
 \[
   F_{*,p}(v)
   =
-  dF_p(v)
-  =
-  dx^n_p(v)
-  =
-  a^n.
+  a^n
+  \left.
+  \frac{\partial}{\partial t}
+  \right|_c.
 \]
 
 よって
@@ -216,7 +246,7 @@ $F(p)=c$ の近傍 $V\subset \mathbb{R}$ を取り，$U$ 上の局所座標
 によって $T_pN$ を $T_pM$ の部分空間とみなす。
 この同一視のもとで，上の結論は簡潔に
 \[
-  T_pN=\ker dF_p
+  T_pN=\ker F_{*,p}
 \]
 と書かれる。
 \end{remark}
