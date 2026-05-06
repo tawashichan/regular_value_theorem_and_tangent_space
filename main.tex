@@ -1,0 +1,224 @@
+\documentclass[uplatex,dvipdfmx]{jsarticle}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+\newtheorem{theorem}{定理}
+\newtheorem{proposition}{命題}
+\newtheorem{lemma}{補題}
+\theoremstyle{definition}
+\newtheorem{definition}{定義}
+\theoremstyle{remark}
+\newtheorem{remark}{注意}
+
+\begin{document}
+
+\section*{正則値の逆像の接空間}
+
+\begin{proposition}
+$M$ を $n$ 次元滑らかな多様体とし，
+$F:M\to \mathbb{R}$ を滑らかな関数とする。
+$c\in \mathbb{R}$ が $F$ の正則値であるとし，
+\[
+  N=F^{-1}(c)
+\]
+とおく。
+
+このとき $N$ は $M$ の埋め込み部分多様体であり，
+包含写像を
+\[
+  i:N\hookrightarrow M
+\]
+と書くと，任意の $p\in N$ に対して
+\[
+  i_{*,p}(T_pN)=\ker F_{*,p}\subset T_pM
+\]
+が成り立つ。
+
+したがって，$i_{*,p}$ によって $T_pN$ を $T_pM$ の部分空間と同一視すれば，
+\[
+  T_pN=\ker F_{*,p}
+\]
+と書ける。
+\end{proposition}
+
+\begin{proof}
+まず，$c$ が $F$ の正則値であるから，任意の $p\in N=F^{-1}(c)$ に対して
+\[
+  F_{*,p}:T_pM\to T_c\mathbb{R}
+\]
+は全射である。
+
+特に，正則値定理により，$N=F^{-1}(c)$ は $M$ の余次元 $1$ の埋め込み部分多様体である。
+以下，任意に $p\in N$ を固定する。
+
+まず
+\[
+  i_{*,p}(T_pN)\subset \ker F_{*,p}
+\]
+を示す。
+
+$N=F^{-1}(c)$ なので，$F$ は $N$ 上で定数関数 $c$ に等しい。
+したがって合成写像
+\[
+  F\circ i:N\to \mathbb{R}
+\]
+は定数写像である。ゆえに任意の $\xi\in T_pN$ に対して
+\[
+  (F\circ i)_{*,p}(\xi)=0
+\]
+である。
+
+一方，接写像の連鎖律より
+\[
+  (F\circ i)_{*,p}=F_{*,p}\circ i_{*,p}
+\]
+であるから，
+\[
+  F_{*,p}\bigl(i_{*,p}(\xi)\bigr)=0
+\]
+となる。したがって
+\[
+  i_{*,p}(\xi)\in \ker F_{*,p}
+\]
+である。よって
+\[
+  i_{*,p}(T_pN)\subset \ker F_{*,p}
+\]
+が従う。
+
+次に逆向きの包含
+\[
+  \ker F_{*,p}\subset i_{*,p}(T_pN)
+\]
+を示す。
+
+$c$ は $F$ の正則値であるから，$F_{*,p}$ は全射である。
+したがって沈め込み定理により，$p$ の近傍 $U\subset M$ と，
+$F(p)=c$ の近傍 $V\subset \mathbb{R}$ を取り，$U$ 上の局所座標
+\[
+  (x^1,\dots,x^n):U\to \mathbb{R}^n
+\]
+を適当に選ぶことで，
+\[
+  F(q)=c+x^n(q)
+\]
+が $q\in U$ に対して成り立つようにできる。
+すなわち，この局所座標では $F$ は最後の座標関数で表される。
+
+このとき
+\[
+  N\cap U
+  =
+  \{q\in U\mid F(q)=c\}
+  =
+  \{q\in U\mid x^n(q)=0\}
+\]
+である。
+
+したがって，$N$ の $p$ における接空間は，$T_pM$ の中で
+\[
+  \left.
+  \frac{\partial}{\partial x^1}
+  \right|_p,
+  \dots,
+  \left.
+  \frac{\partial}{\partial x^{n-1}}
+  \right|_p
+\]
+によって張られる部分空間である。すなわち
+\[
+  i_{*,p}(T_pN)
+  =
+  \operatorname{span}
+  \left\{
+  \left.
+  \frac{\partial}{\partial x^1}
+  \right|_p,
+  \dots,
+  \left.
+  \frac{\partial}{\partial x^{n-1}}
+  \right|_p
+  \right\}.
+\]
+
+一方，任意の $v\in T_pM$ は一意的に
+\[
+  v
+  =
+  \sum_{j=1}^{n} a^j
+  \left.
+  \frac{\partial}{\partial x^j}
+  \right|_p
+\]
+と書ける。
+
+ここで $F=c+x^n$ であるから，
+\[
+  dF_p=dx^n_p
+\]
+である。したがって
+\[
+  F_{*,p}(v)
+  =
+  dF_p(v)
+  =
+  dx^n_p(v)
+  =
+  a^n.
+\]
+
+よって
+\[
+  v\in \ker F_{*,p}
+\]
+であることは
+\[
+  a^n=0
+\]
+であることと同値である。
+
+したがって，$v\in \ker F_{*,p}$ ならば
+\[
+  v
+  =
+  \sum_{j=1}^{n-1} a^j
+  \left.
+  \frac{\partial}{\partial x^j}
+  \right|_p
+\]
+となるので，
+\[
+  v\in i_{*,p}(T_pN)
+\]
+である。すなわち
+\[
+  \ker F_{*,p}\subset i_{*,p}(T_pN)
+\]
+が成り立つ。
+
+以上より，
+\[
+  i_{*,p}(T_pN)=\ker F_{*,p}
+\]
+である。
+\end{proof}
+
+\begin{remark}
+慣習的には，包含写像
+\[
+  i:N\hookrightarrow M
+\]
+の接写像
+\[
+  i_{*,p}:T_pN\to T_pM
+\]
+によって $T_pN$ を $T_pM$ の部分空間とみなす。
+この同一視のもとで，上の結論は簡潔に
+\[
+  T_pN=\ker dF_p
+\]
+と書かれる。
+\end{remark}
+
+\end{document}
