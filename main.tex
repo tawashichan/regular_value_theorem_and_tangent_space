@@ -87,147 +87,34 @@ $N=F^{-1}(c)$ なので，$F$ は $N$ 上で定数関数 $c$ に等しい。
 \]
 が従う。
 
-次に逆向きの包含
+あとは次元を比較する。
+正則値定理により $N$ は $M$ の余次元 $1$ の埋め込み部分多様体であるから，
 \[
-  \ker F_{*,p}\subset i_{*,p}(T_pN)
+  \dim T_pN=n-1
 \]
-を示す。
-
-$c$ は $F$ の正則値であるから，$F_{*,p}$ は全射である。
-したがって沈め込み定理により，$p$ の近傍 $U\subset M$ と，
-$F(p)=c$ の近傍 $V\subset \mathbb{R}$ を取り，$U$ 上の局所座標
+である。
+また，包含写像 $i:N\hookrightarrow M$ は埋め込みであるから，
+$i_{*,p}:T_pN\to T_pM$ は単射である。
+したがって
 \[
-  (x^1,\dots,x^n):U\to \mathbb{R}^n
-\]
-を適当に選ぶことで，
-\[
-  F(q)=c+x^n(q)
-\]
-が $q\in U$ に対して成り立つようにできる。
-すなわち，この局所座標では $F$ は最後の座標関数で表される。
-
-このとき
-\[
-  N\cap U
-  =
-  \{q\in U\mid F(q)=c\}
-  =
-  \{q\in U\mid x^n(q)=0\}
+  \dim i_{*,p}(T_pN)=n-1
 \]
 である。
 
-したがって，$N$ の $p$ における接空間は，$T_pM$ の中で
+一方，$F_{*,p}:T_pM\to T_c\mathbb{R}$ は全射であり，
+$\dim T_pM=n$，$\dim T_c\mathbb{R}=1$ である。
+よって階数・退化次数の定理より
 \[
-  \left.
-  \frac{\partial}{\partial x^1}
-  \right|_p,
-  \dots,
-  \left.
-  \frac{\partial}{\partial x^{n-1}}
-  \right|_p
-\]
-によって張られる部分空間である。すなわち
-\[
-  i_{*,p}(T_pN)
-  =
-  \operatorname{span}
-  \left\{
-  \left.
-  \frac{\partial}{\partial x^1}
-  \right|_p,
-  \dots,
-  \left.
-  \frac{\partial}{\partial x^{n-1}}
-  \right|_p
-  \right\}.
-\]
-
-一方，任意の $v\in T_pM$ は一意的に
-\[
-  v
-  =
-  \sum_{j=1}^{n} a^j
-  \left.
-  \frac{\partial}{\partial x^j}
-  \right|_p
-\]
-と書ける。
-
-ここで次の事実を用いる。
-任意の点 $q\in M$ と任意の接ベクトル $X_q\in T_qM$ に対して，
-ある $\varepsilon>0$ と滑らかな曲線
-\[
-  \gamma:(-\varepsilon,\varepsilon)\to M
-\]
-が存在して，
-\[
-  \gamma(0)=q,
-  \qquad
-  \gamma'(0)=X_q
-\]
-を満たす。
-
-この事実を $q=p$，$X_q=v$ に対して用い，
-\[
-  \gamma(0)=p,
-  \qquad
-  \gamma'(0)=v
-\]
-を満たす曲線 $\gamma$ を取る。
-上の座標表示と $\gamma'(0)=v$ より，
-\[
-  \left.\frac{d}{ds}\right|_{s=0}x^n(\gamma(s))=a^n
+  \dim \ker F_{*,p}=n-1
 \]
 である。
 
-また $p\in N$ であるから $x^n(p)=0$ である。
-$\mathbb{R}$ の標準座標を $t$ と書くと，$F=c+x^n$ より，
-曲線 $F\circ\gamma$ の $t$ 座標は
+すでに
 \[
-  t\bigl((F\circ\gamma)(s)\bigr)
-  =
-  c+x^n(\gamma(s))
+  i_{*,p}(T_pN)\subset \ker F_{*,p}
 \]
-である。したがって，接写像を曲線の速度で計算すると
-\[
-  F_{*,p}(v)
-  =
-  a^n
-  \left.
-  \frac{\partial}{\partial t}
-  \right|_c.
-\]
-
-よって
-\[
-  v\in \ker F_{*,p}
-\]
-であることは
-\[
-  a^n=0
-\]
-であることと同値である。
-
-したがって，$v\in \ker F_{*,p}$ ならば
-\[
-  v
-  =
-  \sum_{j=1}^{n-1} a^j
-  \left.
-  \frac{\partial}{\partial x^j}
-  \right|_p
-\]
-となるので，
-\[
-  v\in i_{*,p}(T_pN)
-\]
-である。すなわち
-\[
-  \ker F_{*,p}\subset i_{*,p}(T_pN)
-\]
-が成り立つ。
-
-以上より，
+を示しており，両辺はともに $T_pM$ の $n-1$ 次元部分空間である。
+したがって
 \[
   i_{*,p}(T_pN)=\ker F_{*,p}
 \]
