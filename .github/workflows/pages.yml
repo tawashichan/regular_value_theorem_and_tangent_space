@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p _site
           cp main.pdf _site/main.pdf
-          cp pages/index.html _site/index.html
+          sed "s/__BUILD_VERSION__/${{ github.sha }}/g" pages/index.html > _site/index.html
           touch _site/.nojekyll
 
       - name: Upload GitHub Pages artifact
