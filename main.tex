@@ -15,6 +15,32 @@
 
 \section*{正則値の逆像の接空間}
 
+\begin{lemma}
+$G:X\to Y$ を滑らかな定値写像とし，その値を $y\in Y$ とする。
+このとき任意の $x\in X$ に対して
+\[
+  G_{*,x}=0:T_xX\to T_yY
+\]
+である。
+\end{lemma}
+
+\begin{proof}
+任意の $x\in X$ と任意の $v\in T_xX$ を取る。
+$v$ を表す滑らかな曲線
+$\gamma:(-\varepsilon,\varepsilon)\to X$ を取り，
+\[
+  \gamma(0)=x,
+  \qquad
+  \gamma'(0)=v
+\]
+とする。
+すると $G\circ\gamma$ は $Y$ 上の定値曲線であるから，
+\[
+  G_{*,x}(v)=(G\circ\gamma)'(0)=0
+\]
+である。
+\end{proof}
+
 \begin{proposition}
 $M$ を $n$ 次元滑らかな多様体とし，
 $P$ を $m$ 次元滑らかな多様体とする。
@@ -60,12 +86,13 @@ $c\in P$ が $F$ の正則値であるとし，
 \]
 を示す。
 
-$N=F^{-1}(c)$ なので，$F$ は $N$ 上で定数写像 $c$ に等しい。
+$N=F^{-1}(c)$ なので，$F$ は $N$ 上で定値写像 $c$ に等しい。
 したがって合成写像
 \[
   F\circ i:N\to P
 \]
-は定数写像である。ゆえに任意の $\xi\in T_pN$ に対して
+は定値写像である。
+補題より，任意の $\xi\in T_pN$ に対して
 \[
   (F\circ i)_{*,p}(\xi)=0
 \]
