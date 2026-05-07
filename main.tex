@@ -8,8 +8,6 @@
 \newtheorem{lemma}{補題}
 \theoremstyle{definition}
 \newtheorem{definition}{定義}
-\theoremstyle{remark}
-\newtheorem{remark}{注意}
 
 \begin{document}
 
@@ -104,7 +102,7 @@ $N=F^{-1}(c)$ なので，$F$ は $N$ 上で定値写像 $c$ に等しい。
 \]
 である。
 
-一方，接写像の連鎖律より
+一方，微分の連鎖律より
 \[
   (F\circ i)_{*,p}=F_{*,p}\circ i_{*,p}
 \]
@@ -155,22 +153,5 @@ $\dim T_pM=n$，$\dim T_cP=m$ である。
 \]
 である。
 \end{proof}
-
-\begin{remark}
-慣習的には，包含写像
-\[
-  i:N\hookrightarrow M
-\]
-の接写像
-\[
-  i_{*,p}:T_pN\to T_pM
-\]
-によって $T_pN$ を $T_pM$ の部分空間とみなす。
-この同一視のもとで，上の結論は簡潔に
-\[
-  T_pN=\ker F_{*,p}
-\]
-と書かれる。
-\end{remark}
 
 \end{document}
