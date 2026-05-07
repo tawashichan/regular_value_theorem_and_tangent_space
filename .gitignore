@@ -4,3 +4,4 @@
 *.fdb_latexmk
 *.log
 *.out
+_site/

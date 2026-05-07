@@ -19,3 +19,11 @@ Docker イメージを作り直したい場合は次のようにします。
 ```sh
 REBUILD_IMAGE=1 ./build_pdf_in_container.sh
 ```
+
+## GitHub Pages での公開
+
+`main` ブランチに push すると，GitHub Actions が `main.tex` から `main.pdf` を生成し，GitHub Pages に公開します。
+
+初回のみ，GitHub のリポジトリ設定で Pages の Source を `GitHub Actions` にしてください。
+
+公開される内容は `pages/index.html` と生成済みの `main.pdf` です。
